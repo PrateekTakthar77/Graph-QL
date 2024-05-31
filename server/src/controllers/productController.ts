@@ -7,8 +7,6 @@ export const getAllProducts = async () => {
 }
 
 export const getProductById = async (id: string | mongoose.Types.ObjectId) => {
-    console.log(id)
     const product = await Product.findById(id);
-    console.log(id)
     return product
 }
