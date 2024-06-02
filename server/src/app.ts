@@ -3,8 +3,9 @@ import { ApolloServer } from "@apollo/server"
 import { startStandaloneServer } from "@apollo/server/standalone"
 import { scema } from './graphQl/scema.js';
 import { connectDataBase } from './database/database.js';
-import { getAllUsets } from './controllers/userController.js';
+import { getAllUsers } from './controllers/userController.js';
 import { getAllProducts, getProductById } from './controllers/productController.js';
+import { getCartById } from './controllers/cartController.js';
 dotenv.config({ path: './.env', });
 
 export const envMode = process.env.NODE_ENV?.trim() || 'DEVELOPMENT';
@@ -17,11 +18,10 @@ const server = new ApolloServer({
   typeDefs: scema,
   resolvers: {
     Query: {
-      request1: () => "hello world",
-      request2: () => "hello world 2",
-      users: getAllUsets,
-      getProducts : getAllProducts,
-      getProduct: (_, { id }) => getProductById(id)
+      users: getAllUsers,
+      getProducts: getAllProducts,
+      getProduct: getProductById,
+      getCart: getCartById
     },
   }
 });

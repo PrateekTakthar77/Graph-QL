@@ -32,12 +32,18 @@ type Product {
     mcharges: Float
   }
 
+  type Cart {
+    id: ID!
+    user: User!
+    items: [String]
+    total: Int!
+  }
+
 type Query {
-    request1:String 
-    request2:String
     users:[User]
     getProduct(id: ID!): Product
     getProducts: [Product]
+    getCart(id:ID!):Cart
 }
 
 `

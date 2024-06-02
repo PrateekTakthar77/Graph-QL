@@ -6,7 +6,7 @@ export const getAllProducts = async () => {
     return products
 }
 
-export const getProductById = async (id: string | mongoose.Types.ObjectId) => {
-    const product = await Product.findById(id);
+export const getProductById = async (parent:any, arg:{ id: string | mongoose.Types.ObjectId}) => {
+    const product = await Product.findById(arg.id)
     return product
 }
