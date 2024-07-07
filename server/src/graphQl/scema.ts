@@ -46,4 +46,4 @@ type Query {
     getCart(id:ID!):Cart
 }
 
-`
+`;

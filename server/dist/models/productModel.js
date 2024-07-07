@@ -2,25 +2,25 @@ import mongoose from "mongoose";
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     description: String,
     mrp: {
         type: Number,
-        required: true
+        required: true,
     },
     price: {
         type: Number,
-        required: true
+        required: true,
     },
     images: [String],
     category: {
         type: String,
-        required: true
+        required: true,
     },
     subcategory: {
         type: String,
-        required: true
+        required: true,
     },
     brand: String,
     material: String,
@@ -32,7 +32,7 @@ const productSchema = new mongoose.Schema({
     gemstones: [String],
     mcharges: {
         type: Number,
-        default: 0
-    }
+        default: 0,
+    },
 });
-export const Product = mongoose.model('Product', productSchema);
+export const Product = mongoose.model("Product", productSchema);
